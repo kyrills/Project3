@@ -14,7 +14,7 @@ public class DBConnect {
     private Connection con;
     private Statement st;
     private ResultSet rs;
-
+    public int Amount = 0;
     public DBConnect() {
         try {
             String host = "jdbc:mysql://91.208.99.2:1129/inf1egro_test";
@@ -28,13 +28,15 @@ public class DBConnect {
             st = con.createStatement();
             String SQL = "SELECT * FROM Fietsroof";
             rs = st.executeQuery(SQL);
-
-            rs.next();
-            int id_col = rs.getInt("Voorval_nummer");
-            String first_name = rs.getString("MK");
-            String last_name = rs.getString("Poging");
-            String job = rs.getString("Plaats");
-            System.out.println(id_col + " " + first_name + " " + last_name + " " + job);
+            while(Amount < 22000) {
+                rs.next();
+                int id_col = rs.getInt("Voorval_nummer");
+                String first_name = rs.getString("MK");
+                String last_name = rs.getString("Poging");
+                String job = rs.getString("Plaats");
+                System.out.println(id_col + " " + first_name + " " + last_name + " " + job);
+                Amount += 1;
+            }
         } catch (Exception ex) {
             System.out.println("erro: " + ex);
         }
