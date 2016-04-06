@@ -40,6 +40,7 @@ public class DBConnect {
         } catch (Exception ex) {
             System.out.println("erro: " + ex);
         }
+
     }
 //        public void getData(){
 //            try{
