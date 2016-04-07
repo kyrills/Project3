@@ -31,7 +31,7 @@ public class Main extends Application{
             }
         });
 //does it work now?
-        //kfdlajfkldsjfldasfdsafd
+        //kfdlajfkldsjfldasfdsafds
 
         StackPane layout = new StackPane();
         layout.getChildren().add(button);
