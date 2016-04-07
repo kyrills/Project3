@@ -18,7 +18,7 @@ public class Gui extends JFrame {
     private Statement st;
     private PreparedStatement ps;
     private ResultSet rs;
-    Button button;
+//    Button button;
 
 
 //    private static String[] filename = {"Cirkel.png"};
@@ -28,8 +28,8 @@ public class Gui extends JFrame {
         this.setSize(400, 400);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        button = new Button();
-        button.setText("Fietsendiefstal");
+//        button = new Button();
+//        button.setText("Fietsendiefstal");
 
 
         try {
@@ -42,7 +42,7 @@ public class Gui extends JFrame {
 
             con = DriverManager.getConnection(host, uName, uPass);
             st = con.createStatement();
-            String SQL = "SELECT DISTINCT FROM Fietsroof";
+            String SQL = "SELECT * FROM Fietsroof";
             rs = st.executeQuery(SQL);
             while (rs.next()) {
                 jc.addItem(rs.getString("Plaats"));
