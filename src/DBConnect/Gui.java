@@ -1,35 +1,104 @@
 package DBConnect;
 
+import DBConnect.DBConnect;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.sql.*;
+import javafx.scene.control.Button;
 
 /**
  * Created by Samuel on 07-04-16.
  */
-public class Gui extends JFrame{
-    private JComboBox box;
-    private JLabel picture;
+public class Gui extends JFrame {
+    JComboBox jc = new JComboBox();
+    JPanel panel = new JPanel();
+    private Connection con;
+    private Statement st;
+    private PreparedStatement ps;
+    private ResultSet rs;
+    Button button;
 
-    private static String[] filename = {};//cikel.png};
-    private Icon[] pics = {new ImageIcon(getClass().getResource(filename[0])), new ImageIcon(getClass().getResource(filename[1]))};
 
-    public Gui(){
-        super("de titel");
-        setLayout(new FlowLayout());
+//    private static String[] filename = {"Cirkel.png"};
+//    private Icon[] pics = {new ImageIcon(getClass().getResource(filename[0])), new ImageIcon(getClass().getResource(filename[1]))};
 
-        box = new JComboBox(filename);
+    public Gui() {
+        this.setSize(400, 400);
+        this.setLocationRelativeTo(null);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        button = new Button();
+        button.setText("Fietsendiefstal");
 
-        box.addItemListener(
-                new ItemListener() {
-                    @Override
-                    public void itemStateChanged(ItemEvent event) {
-                        if(event.getStateChange()==ItemEvent.SELECTED);
-                            picture.setIcon(pics[box.getSelectedIndex()]);
-                    }
-                }
-        );
+
+        try {
+            String host = "jdbc:mysql://91.208.99.2:1129/inf1egro_test";
+            String uName = "inf1egro_test";
+            String uPass = "test";
+
+            Class.forName("com.mysql.jdbc.Driver");
+            //Class.forName("mysql-connector-java-5.1.38-bin.jar");
+
+            con = DriverManager.getConnection(host, uName, uPass);
+            st = con.createStatement();
+            String SQL = "SELECT DISTINCT FROM Fietsroof";
+            rs = st.executeQuery(SQL);
+            while (rs.next()) {
+                jc.addItem(rs.getString("Plaats"));
+//                if (button.setOnAction()== true) {
+//                    System.out.print(jc);
+
+            }
+        //}
+//                int id_col = rs.getInt("Voorval_nummer");
+//                String first_name = rs.getString("MK");
+//                String last_name = rs.getString("Poging");
+//                String job = rs.getString("Plaats");
+//                System.out.println(id_col + " " + first_name + " " + last_name + " " + job);
+//                Amount += 1;
+
+        } catch (Exception ex) {
+            System.out.println("erro: " + ex);
+        } finally {
+            try {
+                st.close();
+                rs.close();
+                con.close();
+            } catch (Exception ex) {
+                System.out.println("erro: " + ex);
+            }
+
+
+            panel.add(jc);
+            this.getContentPane().add(panel);
+            this.setVisible(true);
+        }
+
+//        public void fill(){
+//        String sql = "Selevt * from fietsroof";
+//        ps =con.prepareStatement(sql);
+//        rs=ps.
     }
 
-}
+//        super("de Titel");
+//        setLayout(new FlowLayout());
+//
+//        box = new JComboBox(filename);
+//
+//        box.addItemListener(
+//                new ItemListener() {
+//                    @Override
+//                    public void itemStateChanged(ItemEvent event) {
+//                        if(event.getStateChange()==ItemEvent.SELECTED);
+//                            picture.setIcon(pics[box.getSelectedIndex()]);
+//                    }
+//                }
+//        );
+//        add(box);
+//        picture=new JLabel(pics[0]);
+//        add(picture);
+//    }
+
+    }
+
