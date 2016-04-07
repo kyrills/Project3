@@ -1,8 +1,14 @@
 import DBConnect.DBConnect;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import Gui.Gui;
+import DBConnect.Gui;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
+import javax.swing.*;
 
 
 public class Main extends Application{
@@ -23,7 +29,7 @@ public class Main extends Application{
         //button.setText("Fietsendiefstal");
         button.setText("123");
 
-        button.setOnAction(new EventHandler<ActionEvent>() {
+        button.setOnAction(new EventHandler<ActionEvent>()){
             @Override
             public void handle(ActionEvent event) {
                 DBConnect dbconnect = new DBConnect();
@@ -31,7 +37,7 @@ public class Main extends Application{
 
             }
         });
-does it work now?
+//does it work now?
 
         StackPane layout = new StackPane();
         layout.getChildren().add(button);
