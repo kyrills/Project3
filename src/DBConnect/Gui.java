@@ -18,6 +18,8 @@ public class Gui extends JFrame {
     private Statement st;
     private PreparedStatement ps;
     private ResultSet rs;
+    int Aantal_plaatsen = 0;
+
 //    Button button;
 
 
@@ -25,6 +27,7 @@ public class Gui extends JFrame {
 //    private Icon[] pics = {new ImageIcon(getClass().getResource(filename[0])), new ImageIcon(getClass().getResource(filename[1]))};
 
     public Gui() {
+        //System.out.println("123");
         this.setSize(400, 400);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,6 +36,8 @@ public class Gui extends JFrame {
 
 
         try {
+
+
             String host = "jdbc:mysql://91.208.99.2:1129/inf1egro_test";
             String uName = "inf1egro_test";
             String uPass = "test";
@@ -41,16 +46,22 @@ public class Gui extends JFrame {
             //Class.forName("mysql-connector-java-5.1.38-bin.jar");
 
             con = DriverManager.getConnection(host, uName, uPass);
+
             st = con.createStatement();
             String SQL = "SELECT * FROM Fietsroof";
             rs = st.executeQuery(SQL);
+
             while (rs.next()) {
                 jc.addItem(rs.getString("Plaats"));
+                System.out.println(rs.getString("Plaats"));
+                Aantal_plaatsen += 1;
+
 //                if (button.setOnAction()== true) {
 //                    System.out.print(jc);
 
-            }
-        //}
+
+        }
+            System.out.println(Aantal_plaatsen);
 //                int id_col = rs.getInt("Voorval_nummer");
 //                String first_name = rs.getString("MK");
 //                String last_name = rs.getString("Poging");
@@ -61,6 +72,7 @@ public class Gui extends JFrame {
         } catch (Exception ex) {
             System.out.println("erro: " + ex);
         } finally {
+
             try {
                 st.close();
                 rs.close();
