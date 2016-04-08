@@ -1,5 +1,7 @@
 package DBConnect;
 import List.Link;
+import List.LinkList;
+
 import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -29,7 +31,7 @@ public class DBConnect {
             String SQL = "SELECT * FROM Fietsroof";
             rs = st.executeQuery(SQL);
             while(Amount < 22000) {
-                theLinkedList.insertFirstLink("Don Quixote", 500);
+
                 rs.next();
                 int id_col = rs.getInt("Voorval_nummer");
                 String first_name = rs.getString("MK");

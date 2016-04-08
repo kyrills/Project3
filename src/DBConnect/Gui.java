@@ -7,6 +7,8 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.sql.*;
 import javafx.scene.control.Button;
+import List.Link;
+import List.LinkList;
 
 /**
  * Created by Samuel on 07-04-16.
@@ -19,6 +21,8 @@ public class Gui extends JFrame {
     private PreparedStatement ps;
     private ResultSet rs;
     int Aantal_plaatsen = 0;
+    public String bookName;
+    public int millionsSold;
 
 //    Button button;
 
@@ -31,6 +35,7 @@ public class Gui extends JFrame {
         this.setSize(400, 400);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 //        button = new Button();
 //        button.setText("Fietsendiefstal");
 
@@ -55,6 +60,9 @@ public class Gui extends JFrame {
                 jc.addItem(rs.getString("Plaats"));
                 System.out.println(rs.getString("Plaats"));
                 Aantal_plaatsen += 1;
+                List.LinkList theLinkedList = new List.LinkList();
+                theLinkedList.insertFirstLink("Don Quixote", 500);
+                System.out.println(bookName + ": " + millionsSold + ",000,000 Sold");
 
 //                if (button.setOnAction()== true) {
 //                    System.out.print(jc);
