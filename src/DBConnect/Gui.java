@@ -53,16 +53,16 @@ public class Gui extends JFrame {
             con = DriverManager.getConnection(host, uName, uPass);
 
             st = con.createStatement();
-            String SQL = "SELECT * FROM Fietsroof";
+            String SQL = "SELECT DISTINCT Plaats FROM Fietsroof";
             rs = st.executeQuery(SQL);
 
             while (rs.next()) {
                 jc.addItem(rs.getString("Plaats"));
                 System.out.println(rs.getString("Plaats"));
                 Aantal_plaatsen += 1;
-                List.LinkList theLinkedList = new List.LinkList();
-                theLinkedList.insertFirstLink("Don Quixote", 500);
-                System.out.println(bookName + ": " + millionsSold + ",000,000 Sold");
+//                List.LinkList theLinkedList = new List.LinkList();
+//                theLinkedList.insertFirstLink("Don Quixote", 500);
+//                System.out.println(bookName + ": " + millionsSold + ",000,000 Sold");
 
 //                if (button.setOnAction()== true) {
 //                    System.out.print(jc);
