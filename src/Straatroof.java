@@ -17,7 +17,7 @@ public class Straatroof extends JFrame {
     JComboBox jc = new JComboBox();
     JPanel panel = new JPanel();
 
-//doet ie het nuv2.0.1.2
+//doet ie het nuv2.0.1.2.2123
     public String getPlaats() {
         return plaats;
     }
@@ -73,8 +73,8 @@ public class Straatroof extends JFrame {
 
             Connection con = DriverManager.getConnection(host, uName, uPass);
             st = con.createStatement();
-//            String SQL = "SELECT DISTINCT Plaats FROM straatroof";
-//            rs = st.executeQuery(SQL);
+            String SQL = "SELECT DISTINCT Plaats FROM straatroof";
+            rs = st.executeQuery(SQL);
             //Even gecomment in de hoop dat ik hem dan mag pushen
             while(Amount < 22000) {
 //                theLinkedList.insertFirstLink("Don Quixote", 500);
