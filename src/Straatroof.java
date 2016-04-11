@@ -20,7 +20,7 @@ public class Straatroof extends JFrame {
     JComboBox jc = new JComboBox();
     JPanel panel = new JPanel();
 
-//doet ie het nu
+//doet ie het nuv2.0
     public String getPlaats() {
         return plaats;
     }
