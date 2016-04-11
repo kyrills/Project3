@@ -6,41 +6,59 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import DBConnect.Gui;
+import javax.swing.*;
 
 
 
-public class Main extends Application{
+//public class Main extends Application{
+public class Main{
+    public static int Aantal_plaatsen = 0;
 
+    //Button button;
+public static void main(String[] args) {
+    Aantal_plaatsen +=1;
+    //launch(args);
+    Gui go = new Gui();
+    go.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    go.setSize(300, 200);
+    go.setVisible(true);
+    //aids
 
-    Button button;
-    public static void main(String[] args) {
-        launch(args);
+    if (Aantal_plaatsen == 40) ;
+    {
+        //launch(args);
+        go = new Gui();
+        go.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        go.setSize(800, 200);
+        go.setVisible(true);
     }
-    @Override
-    public void start (Stage primaryStage) throws Exception {
-        primaryStage.setTitle("Criminaliteit");
-        button = new Button();
-        button.setText("Fietsendiefstal");
-
-        button.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-                DBConnect dbconnect = new DBConnect();
-
-
-            }
-        });
-//does it work now?
-        //kfdlajfkldsjfldasfdsafds
-
-        StackPane layout = new StackPane();
-        layout.getChildren().add(button);
-
-        Scene scene = new Scene(layout, 300, 250);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-
-    }
+}
+//    @Override
+//    public void start (Stage primaryStage) throws Exception {
+//        primaryStage.setTitle("Criminaliteit");
+//        button = new Button();
+//        button.setText("Fietsendiefstal");
+//
+//        button.setOnAction(new EventHandler<ActionEvent>() {
+//            @Override
+//            public void handle(ActionEvent event) {
+//                DBConnect dbconnect = new DBConnect();
+//
+//
+//
+//            }
+//        });
+////does it work now?
+//
+//        StackPane layout = new StackPane();
+//        layout.getChildren().add(button);
+//
+//        Scene scene = new Scene(layout, 300, 250);
+//        primaryStage.setScene(scene);
+//        primaryStage.show();
+//
+//    }
 
 
 }
