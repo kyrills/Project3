@@ -7,21 +7,33 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import DBConnect.Gui;
-import javax.swing.JFrame;
+import javax.swing.*;
+
 
 
 //public class Main extends Application{
 public class Main{
+    public static int Aantal_plaatsen = 0;
 
     //Button button;
 public static void main(String[] args) {
+    Aantal_plaatsen +=1;
+    //launch(args);
+    Gui go = new Gui();
+    go.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    go.setSize(300, 200);
+    go.setVisible(true);
+
+
+    if (Aantal_plaatsen == 40) ;
+    {
         //launch(args);
-        Gui go = new Gui();
+        go = new Gui();
         go.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        go.setSize(300,200);
+        go.setSize(800, 200);
         go.setVisible(true);
     }
-
+}
 //    @Override
 //    public void start (Stage primaryStage) throws Exception {
 //        primaryStage.setTitle("Criminaliteit");

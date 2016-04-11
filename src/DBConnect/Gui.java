@@ -1,14 +1,9 @@
 package DBConnect;
 
-import DBConnect.DBConnect;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.sql.*;
 import javafx.scene.control.Button;
-import List.Link;
-import List.LinkList;
 
 /**
  * Created by Samuel on 07-04-16.
@@ -24,7 +19,9 @@ public class Gui extends JFrame {
     public String bookName;
     public int millionsSold;
 
-//    Button button;
+    private JMenuItem Exit;
+    private JMenuItem Registration;
+    private JMenuItem Apie;
 
 
 //    private static String[] filename = {"Cirkel.png"};
@@ -32,9 +29,11 @@ public class Gui extends JFrame {
 
     public Gui() {
         //System.out.println("123");
+//        setMenu();
         this.setSize(400, 400);
         this.setLocationRelativeTo(null);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 
 //        button = new Button();
 //        button.setText("Fietsendiefstal");
@@ -58,6 +57,7 @@ public class Gui extends JFrame {
 
             while (rs.next()) {
                 jc.addItem(rs.getString("Plaats"));
+
                 System.out.println(rs.getString("Plaats"));
                 Aantal_plaatsen += 1;
 //                List.LinkList theLinkedList = new List.LinkList();
@@ -68,7 +68,7 @@ public class Gui extends JFrame {
 //                    System.out.print(jc);
 
 
-        }
+            }
             System.out.println(Aantal_plaatsen);
 //                int id_col = rs.getInt("Voorval_nummer");
 //                String first_name = rs.getString("MK");
@@ -94,12 +94,36 @@ public class Gui extends JFrame {
             this.getContentPane().add(panel);
             this.setVisible(true);
         }
+    }
 
+        private void setMenu(){
+            JMenuBar barObj = new JMenuBar(); // create menuBar obj
+            JMenu messagesObj = new JMenu("Meniu"); //create menu bar menu object
+
+            barObj.setBackground(Color.YELLOW); // set menu bar bg color
+
+            Registration = new JMenuItem("Registration");
+
+            Registration.setBackground(Color.WHITE); // set menu bar menu options bg color
+            messagesObj.add((Action) Registration); // add Registration into messages
+
+            Apie = new JMenuItem("Apie");
+
+            Apie.setBackground(Color.WHITE);
+            messagesObj.add(Apie);
+
+            Exit = new JMenuItem("Exit");
+
+            Exit.setBackground(Color.WHITE);
+            messagesObj.add(Exit);
+        }
 //        public void fill(){
 //        String sql = "Selevt * from fietsroof";
 //        ps =con.prepareStatement(sql);
 //        rs=ps.
-    }
+
+
+
 
 //        super("de Titel");
 //        setLayout(new FlowLayout());
