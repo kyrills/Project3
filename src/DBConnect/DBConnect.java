@@ -1,10 +1,11 @@
 package DBConnect;
-import List.Link;
-import List.LinkList;
+//import List.Link;
+//import List.LinkList;
 
-import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 /**
  * Created by Samuel on 04-04-16.
@@ -17,6 +18,7 @@ public class DBConnect {
     private Statement st;
     private ResultSet rs;
     public int Amount = 0;
+    public String fietsroof;
     public DBConnect() {
         try {
             String host = "jdbc:mysql://91.208.99.2:1129/inf1egro_test";
@@ -28,8 +30,8 @@ public class DBConnect {
 
             Connection con = DriverManager.getConnection(host, uName, uPass);
             st = con.createStatement();
-            String SQL = "SELECT * FROM Fietsroof";
-            rs = st.executeQuery(SQL);
+            fietsroof = "SELECT * FROM Fietsroof";
+            rs = st.executeQuery(fietsroof);
             while(Amount < 22000) {
 
                 rs.next();
@@ -45,21 +47,7 @@ public class DBConnect {
         }
 
     }
-//        public void getData(){
-//            try{
-//
-//                String query = "select * from persons";
-//                rs = st.executeQuery(query);
-//                System.out.println("Records from database:");
-//                    String name = rs.getString("name");
-//                    String age = rs.getString("age");
-//                    System.out.println("Name:" + name + "age: "+ age);
-//
-//
-//            }catch(Exception ex) {
-//                System.out.println("erro: " + ex);
-//            }
-//        }
+
 }
 
 
