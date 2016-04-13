@@ -3,6 +3,7 @@ package DBConnect;
 import javax.swing.*;
 import java.awt.*;
 import java.sql.*;
+import DBConnect.DBConnect;
 import javafx.scene.control.Button;
 
 /**
@@ -22,6 +23,8 @@ public class Gui extends JFrame {
     private JMenuItem Exit;
     private JMenuItem Registration;
     private JMenuItem Apie;
+    DBConnect connect = new DBConnect();
+
 
 
 //    private static String[] filename = {"Cirkel.png"};
@@ -42,15 +45,15 @@ public class Gui extends JFrame {
         try {
 
 
-            String host = "jdbc:mysql://91.208.99.2:1129/inf1egro_test";
-            String uName = "inf1egro_test";
-            String uPass = "test";
-
-            Class.forName("com.mysql.jdbc.Driver");
-            //Class.forName("mysql-connector-java-5.1.38-bin.jar");
-
-            con = DriverManager.getConnection(host, uName, uPass);
-
+//            String host = "jdbc:mysql://91.208.99.2:1129/inf1egro_test";
+//            String uName = "inf1egro_test";
+//            String uPass = "test";
+//
+//            Class.forName("com.mysql.jdbc.Driver");
+//            //Class.forName("mysql-connector-java-5.1.38-bin.jar");
+//
+//            con = DriverManager.getConnection(host, uName, uPass);
+            connect.Connector();
             st = con.createStatement();
             String SQL = "SELECT DISTINCT Plaats FROM Fietsroof";
             rs = st.executeQuery(SQL);
@@ -96,27 +99,27 @@ public class Gui extends JFrame {
         }
     }
 
-        private void setMenu(){
-            JMenuBar barObj = new JMenuBar(); // create menuBar obj
-            JMenu messagesObj = new JMenu("Meniu"); //create menu bar menu object
-
-            barObj.setBackground(Color.YELLOW); // set menu bar bg color
-
-            Registration = new JMenuItem("Registration");
-
-            Registration.setBackground(Color.WHITE); // set menu bar menu options bg color
-            messagesObj.add((Action) Registration); // add Registration into messages
-
-            Apie = new JMenuItem("Apie");
-
-            Apie.setBackground(Color.WHITE);
-            messagesObj.add(Apie);
-
-            Exit = new JMenuItem("Exit");
-
-            Exit.setBackground(Color.WHITE);
-            messagesObj.add(Exit);
-        }
+//        private void setMenu(){
+//            JMenuBar barObj = new JMenuBar(); // create menuBar obj
+//            JMenu messagesObj = new JMenu("Meniu"); //create menu bar menu object
+//
+//            barObj.setBackground(Color.YELLOW); // set menu bar bg color
+//
+//            Registration = new JMenuItem("Registration");
+//
+//            Registration.setBackground(Color.WHITE); // set menu bar menu options bg color
+//            messagesObj.add((Action) Registration); // add Registration into messages
+//
+//            Apie = new JMenuItem("Apie");
+//
+//            Apie.setBackground(Color.WHITE);
+//            messagesObj.add(Apie);
+//
+//            Exit = new JMenuItem("Exit");
+//
+//            Exit.setBackground(Color.WHITE);
+//            messagesObj.add(Exit);
+//        }
 //        public void fill(){
 //        String sql = "Selevt * from fietsroof";
 //        ps =con.prepareStatement(sql);

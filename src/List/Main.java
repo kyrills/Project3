@@ -1,17 +1,11 @@
+package List;
+
 import DBConnect.DBConnect;
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
 import DBConnect.Gui;
 import javax.swing.*;
 
 
-
-//public class Main extends Application{
+//public class List.Main extends Application{
 public class Main{
     public static int Aantal_plaatsen = 0;
 
@@ -19,6 +13,7 @@ public class Main{
 public static void main(String[] args) {
     Aantal_plaatsen +=1;
     //launch(args);
+
     Gui go = new Gui();
     go.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     go.setSize(300, 200);
