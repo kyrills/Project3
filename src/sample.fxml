@@ -27,17 +27,15 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <BarChart layoutX="39.0" layoutY="-8.0" prefHeight="550.0" prefWidth="900.0" title="Criminaliteit in Rotterdam">
-                           <xAxis>
-                              <CategoryAxis side="BOTTOM" />
-                           </xAxis>
-                           <yAxis>
-                              <NumberAxis side="LEFT" />
-                           </yAxis>
-                           <padding>
-                              <Insets top="30.0" />
-                           </padding>
-                        </BarChart>
+                        <LineChart fx:id="lineChart" layoutX="174.0" layoutY="93.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <Button layoutX="395.0" layoutY="520.0" mnemonicParsing="false" onAction="#btn" text="Button" />
                      </children>
                   </AnchorPane>
                </content>
@@ -120,21 +118,7 @@
             </Tab>
             <Tab closable="false" text="Question 6">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0">
-                     <children>
-                        <BarChart layoutX="39.0" layoutY="-8.0" prefHeight="550.0" prefWidth="900.0" title="Tijdstip met de meeste delicten">
-                           <xAxis>
-                              <CategoryAxis side="BOTTOM" />
-                           </xAxis>
-                           <yAxis>
-                              <NumberAxis side="LEFT" />
-                           </yAxis>
-                           <padding>
-                              <Insets top="30.0" />
-                           </padding>
-                        </BarChart>
-                     </children>
-                  </AnchorPane>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" />
                </content>
             </Tab>
          </tabs>

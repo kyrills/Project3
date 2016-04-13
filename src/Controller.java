@@ -12,46 +12,28 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
-
+import javafx.scene.control.TextField;
 public class Controller implements Initializable {
 
     @FXML
     public LineChart chart;
 
     @FXML
-    NumberAxis xAxis = new NumberAxis("Number saved", 1, 10.1, 1);
+    public TextField Plaats;
+
+
+
 
     @FXML
-    NumberAxis yAxis = new NumberAxis("Calculated Value", 0, 100, 1);
+    public LineChart<String, Number> lineChart;
 
-
-
-    @FXML
-    private void handleButtonAction(ActionEvent event) {
-        ObservableList<XYChart.Series<Double,Double>> lineChartData = FXCollections.observableArrayList(
-                new LineChart.Series<Double,Double>("Series 1", FXCollections.observableArrayList(
-                        new XYChart.Data<Double,Double>(0.0, 1.0),
-                        new XYChart.Data<Double,Double>(1.2, 1.4),
-                        new XYChart.Data<Double,Double>(2.2, 1.9),
-                        new XYChart.Data<Double,Double>(2.7, 2.3),
-                        new XYChart.Data<Double,Double>(2.9, 0.5)
-                )),
-                new LineChart.Series<Double,Double>("Series 2", FXCollections.observableArrayList(
-                        new XYChart.Data<Double,Double>(0.0, 1.6),
-                        new XYChart.Data<Double,Double>(0.8, 0.4),
-                        new XYChart.Data<Double,Double>(1.4, 2.9),
-                        new XYChart.Data<Double,Double>(2.1, 1.3),
-                        new XYChart.Data<Double,Double>(2.6, 0.9)
-                ))
-        );
-        chart = new LineChart(xAxis, yAxis, lineChartData);
-
-        //  chart.setAnimated(true);
-        //  chart.animatedProperty();
-        System.out.println("kaw");
-
+    public void btn(ActionEvent event) {
+        XYChart.Series<String, Number> series = new XYChart.Series<String, Number>();
+        series.getData().add(new XYChart.Data<String, Number>("Jan", 200));
+        series.getData().add(new XYChart.Data<String, Number>("Feb", 600));
+        series.getData().add(new XYChart.Data<String, Number>("Mar", 400));
+        lineChart.getData().add(series);
     }
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

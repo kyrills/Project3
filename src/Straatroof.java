@@ -3,6 +3,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Straatroof extends JFrame {
     private String plaats;
@@ -16,8 +18,9 @@ public class Straatroof extends JFrame {
     public int Amount = 0;
     JComboBox jc = new JComboBox();
     JPanel panel = new JPanel();
+    public List myList = new ArrayList();
 
-//doet ie het nuv2.0.1.2.2123
+
     public String getPlaats() {
         return plaats;
     }
@@ -74,12 +77,18 @@ public class Straatroof extends JFrame {
             Connection con = DriverManager.getConnection(host, uName, uPass);
             st = con.createStatement();
             String SQL = "SELECT DISTINCT Plaats FROM straatroof";
+            String Plaats = "SELECT DISTINCT Plaats FROM straatroof" ;
             rs = st.executeQuery(SQL);
+//            Plaats = rs = st.executeQuery(Plaats);
+            myList.add(SQL);
+            System.out.println(myList);
+
+
             //Even gecomment in de hoop dat ik hem dan mag pushen
             while(Amount < 22000) {
 //                theLinkedList.insertFirstLink("Don Quixote", 500);
                 rs.next();
-                String Plaats = rs.getString("Plaats");
+//                String Plaats = rs.getString("Plaats");
 //                String soortRoof = rs.getString("MK_omschrijving");
 
                 System.out.println(Plaats + " " + soortRoof);
