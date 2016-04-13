@@ -3,6 +3,7 @@ package DBConnect;
 import javax.swing.*;
 import java.awt.*;
 import java.sql.*;
+import DBConnect.DBConnect;
 
 /**
  * Created by Samuel on 07-04-16.
@@ -21,6 +22,8 @@ public class Gui extends JFrame {
     private JMenuItem Exit;
     private JMenuItem Registration;
     private JMenuItem Apie;
+
+DBConnect connect = new DBConnect();
 
 
     public Gui() {
