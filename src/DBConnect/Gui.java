@@ -1,5 +1,7 @@
 package DBConnect;
 
+import javafx.scene.chart.BarChart;
+
 import javax.swing.*;
 import java.awt.*;
 import java.sql.*;
@@ -18,6 +20,7 @@ public class Gui extends JFrame {
     int Aantal_plaatsen = 0;
     public String bookName;
     public int millionsSold;
+    String SQL = "SELECT count(Voorval_nummer) FROM Fietsroof where Buurt = '10 STADSDRIEHOEK'";
 
     private JMenuItem Exit;
     private JMenuItem Registration;
@@ -43,13 +46,13 @@ DBConnect connect = new DBConnect();
             con = DriverManager.getConnection(host, uName, uPass);
 
             st = con.createStatement();
-            String SQL = "SELECT DISTINCT Plaats FROM Fietsroof";
+
             rs = st.executeQuery(SQL);
 
             while (rs.next()) {
-                jc.addItem(rs.getString("Plaats"));
+                jc.addItem(rs.getString("count(Voorval_nummer)"));
 
-                System.out.println(rs.getString("Plaats"));
+                System.out.println(rs.getString("count(Voorval_nummer)"));
                 Aantal_plaatsen += 1;
 
             }
@@ -75,7 +78,7 @@ DBConnect connect = new DBConnect();
         }
     }
 
-        private void setMenu(){
+        public void setMenu(){
             JMenuBar barObj = new JMenuBar(); // create menuBar obj
             JMenu messagesObj = new JMenu("Meniu"); //create menu bar menu object
 
@@ -95,8 +98,8 @@ DBConnect connect = new DBConnect();
 
             Exit.setBackground(Color.WHITE);
             messagesObj.add(Exit);
+
         }
 
 
     }
-
