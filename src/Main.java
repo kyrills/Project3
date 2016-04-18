@@ -1,3 +1,4 @@
+import DBConnect.DBConnect;
 import DBConnect.Gui;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,6 +7,8 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import javax.swing.*;
+
+import java.sql.SQLException;
 
 import static javafx.application.Application.launch;
 
@@ -23,7 +26,15 @@ public class Main extends Application{
         primaryStage.show();
     }
 
-public static void main(String[] args) {
+public static void main(String[] args) throws SQLException, ClassNotFoundException {
+//    Query query = new Query();
+//    query.queries();
+
+//    DBConnect dbConnect = new DBConnect();
+//    dbConnect.DBConnect();
+
+    Query wijken = new Query();
+    wijken.wijken();
 
     launch(args);
 //    Aantal_plaatsen +=1;
