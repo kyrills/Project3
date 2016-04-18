@@ -124,18 +124,18 @@ public class Controller implements Initializable {
     }
 
     public void btn6(ActionEvent event) {
-//        XYChart.Series<String, Number> series = new XYChart.Series<>();
-//
-//        Question6 q6 = new Question6();
-//        try {
-//            q6.getFietsroven().forEach(roof ->{
-//                series.getData().add(new XYChart.Data<String, Number>(roof.getArea(), roof.getAantal()));
-//            });
-//            barChart.getData().add(series);
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+        XYChart.Series<String, Number> series6 = new XYChart.Series<>();
+
+        Question6 q6 = new Question6();
+        try {
+            q6.getGevaarlijkstedagdeel().forEach(roof ->{
+                series6.getData().add(new XYChart.Data<String, Number>(roof.getDay_time(), roof.getCount_overvallen()));
+            });
+            barChart.getData().add(series6);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

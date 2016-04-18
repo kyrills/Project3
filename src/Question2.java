@@ -30,7 +30,7 @@ public class Question2 {
         List<Antwoord2> GevaarlijkstewijkenTotaals = new ArrayList<>();
         while (!rs.isLast()) {
             rs.next();
-            Antwoord2 gevaarlijkstewijkenTotaal = new Antwoord2( rs.getString("area"), rs.getInt("count(s.weapon)"));
+            Antwoord2 gevaarlijkstewijkenTotaal = new Antwoord2( rs.getString("ns.area"), rs.getInt("count(s.weapon)"));
             System.out.println(gevaarlijkstewijkenTotaal);
 
             GevaarlijkstewijkenTotaals.add(gevaarlijkstewijkenTotaal);

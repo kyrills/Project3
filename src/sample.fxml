@@ -104,7 +104,7 @@
                  <content>
                      <AnchorPane minHeight="0.0" minWidth="0.0">
                          <children>
-                             <PieChart fx:id="pieChart2" layoutX="186.0" layoutY="68.0" />
+                             <PieChart fx:id="pieChart" layoutX="186.0" layoutY="68.0" />
                              <Button layoutX="390.0" layoutY="468.0" mnemonicParsing="false" onAction="#btn5" text="Button" />
                          </children></AnchorPane>
                  </content>
@@ -113,7 +113,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <PieChart fx:id="pieChart" layoutX="186.0" layoutY="68.0" />
+                        <PieChart fx:id="pieChart2" layoutX="186.0" layoutY="68.0" />
                         <Button layoutX="390.0" layoutY="468.0" mnemonicParsing="false" onAction="#btn6" text="Button" />
                      </children></AnchorPane>
                </content>
