@@ -1,7 +1,7 @@
-package sample;
 
 import java.awt.event.KeyEvent;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -34,11 +34,18 @@ public class Controller implements Initializable {
     public PieChart pieChart;
 
     public void btn(ActionEvent event) {
-        XYChart.Series<String, Number> series = new XYChart.Series<String, Number>();
-        series.getData().add(new XYChart.Data<String, Number>("Jan", 200));
-        series.getData().add(new XYChart.Data<String, Number>("Feb", 600));
-        series.getData().add(new XYChart.Data<String, Number>("Mar", 400));
-        barChart.getData().add(series);
+        XYChart.Series<String, Number> series = new XYChart.Series<>();
+
+        Question1 q1 = new Question1();
+        try {
+            q1.getFietsroven().forEach(roof ->{
+                series.getData().add(new XYChart.Data<String, Number>(roof.getArea(), roof.getAantal()));
+            });
+            barChart.getData().add(series);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void btn3(ActionEvent event){

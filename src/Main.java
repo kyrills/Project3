@@ -14,16 +14,12 @@ public class Main extends Application{
         primaryStage.show();
     }
 
-public static void main(String[] args) throws SQLException, ClassNotFoundException {
-
-    Query wijken = new Query();
-    wijken.wijken();
-
-    launch(args);
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        launch(args);
     }
 
-
 }
+
 
 
 

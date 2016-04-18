@@ -13,15 +13,12 @@ public class DBConnect {
             String host = "jdbc:mysql://91.208.99.2:1129/inf1egro_test";
             String uName = "inf1egro_test";
             String uPass = "test";
-
             Class.forName("com.mysql.jdbc.Driver");
-
-             con = DriverManager.getConnection(host, uName, uPass);
+            con = DriverManager.getConnection(host, uName, uPass);
 
         } catch (Exception ex) {
             System.out.println("erro: " + ex);
         }
-
 
     }
     public ResultSet executeQuery(String query) throws SQLException {
