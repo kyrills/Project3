@@ -10,29 +10,44 @@ import java.util.List;
 public class Question1 {
     private ResultSet rs;
     public int Amount = 0;
-    public String wijkroof;
+    public String fietsroof;
+    public String straatroof;
+    DBConnect con = new DBConnect();
 
     public void queries() throws SQLException {
     }
 
     public List<FietsroofTotaal> getFietsroven() throws SQLException {
-        DBConnect con = new DBConnect();
         System.out.println(con);
+        fietsroof =  "SELECT DISTINCT area, COUNT(area) AS Aantal FROM Neighbourhood_fietsroof WHERE location = \"ROTTERDAM\" GROUP BY area HAVING count(area) > 340";
+        rs = con.executeQuery(fietsroof);
 
-        wijkroof =  "SELECT DISTINCT area, COUNT(area) AS Aantal FROM Neighbourhood_fietsroof WHERE location = \"ROTTERDAM\" GROUP BY area HAVING count(area) > 340";
-        System.out.println(wijkroof);
-        rs = con.executeQuery(wijkroof);
         List<FietsroofTotaal> fietsroofTotaals = new ArrayList<>();
         while (!rs.isLast()) {
             rs.next();
             FietsroofTotaal fietsroofTotaal = new FietsroofTotaal( rs.getString("area"), rs.getInt("Aantal"));
-            System.out.println(fietsroofTotaal);
 
             fietsroofTotaals.add(fietsroofTotaal);
             Amount += 1;
         }
 
         return fietsroofTotaals;
+    }
+    public List<StraatroofTotaal> getStraatroven() throws SQLException {
+        System.out.println(con);
+        straatroof = "SELECT DISTINCT area, COUNT(area) AS Aantal FROM Neighbourhood_straatroof WHERE location = \"ROTTERDAM\" GROUP BY area HAVING count(area) > 75";
+        rs = con.executeQuery(straatroof);
+
+        List<StraatroofTotaal> straatroofTotaals = new ArrayList<>();
+        while (!rs.isLast()) {
+            rs.next();
+            StraatroofTotaal straatroofTotaal = new StraatroofTotaal(rs.getString("area"), rs.getInt("Aantal"));
+
+            straatroofTotaals.add(straatroofTotaal);
+            Amount += 1;
+        }
+
+        return straatroofTotaals;
     }
 }
 

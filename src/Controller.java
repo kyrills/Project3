@@ -44,13 +44,19 @@ public class Controller implements Initializable {
 
     public void btn(ActionEvent event) {
         XYChart.Series<String, Number> series = new XYChart.Series<>();
+        XYChart.Series<String, Number> series1 = new XYChart.Series<>();
+        barChart.setCategoryGap(0);
 
         Question1 q1 = new Question1();
         try {
             q1.getFietsroven().forEach(roof ->{
-                series.getData().add(new XYChart.Data<String, Number>(roof.getArea(), roof.getAantal()));
+                series.getData().add(new XYChart.Data<String, Number>(roof.getArea().substring(2), roof.getAantal()));
             });
-            barChart.getData().add(series);
+            q1.getStraatroven().forEach(roof ->{
+                series1.getData().add(new XYChart.Data<String, Number>(roof.getArea().substring(2), roof.getAantal()));
+            });
+
+            barChart.getData().addAll(series, series1);
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -63,7 +69,7 @@ public class Controller implements Initializable {
         Question2 q2 = new Question2();
         try {
             q2.getGevaarlijkstewijk().forEach(roof -> {
-                series2.getData().add(new XYChart.Data<String, Number>(roof.getArea(), roof.getWapenovervallen()));
+                series2.getData().add(new XYChart.Data<String, Number>(roof.getArea().substring(2), roof.getWapenovervallen()));
             });
 
             barChart2.getData().add(series2);
