@@ -117,6 +117,21 @@ public class Controller implements Initializable {
 
     }
 
+    public void btn6(ActionEvent event) {
+//        XYChart.Series<String, Number> series = new XYChart.Series<>();
+//
+//        Question6 q6 = new Question6();
+//        try {
+//            q6.getFietsroven().forEach(roof ->{
+//                series.getData().add(new XYChart.Data<String, Number>(roof.getArea(), roof.getAantal()));
+//            });
+//            barChart.getData().add(series);
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
