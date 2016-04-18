@@ -47,7 +47,8 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <BarChart layoutX="39.0" layoutY="-8.0" prefHeight="550.0" prefWidth="900.0" title="Gevaar in Rotterdam">
+                        <Button layoutX="395.0" layoutY="520.0" mnemonicParsing="false" onAction="#btn2" text="Button" />
+                        <BarChart fx:id="barChart2" layoutX="157.0" layoutY="61.0">
                            <xAxis>
                               <CategoryAxis side="BOTTOM" />
                            </xAxis>

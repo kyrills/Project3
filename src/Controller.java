@@ -1,5 +1,6 @@
 
 import java.awt.event.KeyEvent;
+import java.awt.geom.Arc2D;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -12,7 +13,14 @@ import javafx.scene.chart.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
+
+
+
+
+
 public class Controller implements Initializable {
+
+
 
     @FXML
     public BarChart chart;
@@ -33,6 +41,7 @@ public class Controller implements Initializable {
     @FXML
     public PieChart pieChart;
 
+
     public void btn(ActionEvent event) {
         XYChart.Series<String, Number> series = new XYChart.Series<>();
 
@@ -47,6 +56,24 @@ public class Controller implements Initializable {
             e.printStackTrace();
         }
     }
+
+    public void btn2(ActionEvent event) {
+        XYChart.Series<String, Number> series2 = new XYChart.Series<>();
+
+        Question2 q2 = new Question2();
+        try {
+            q2.getGevaarlijkstewijk().forEach(roof -> {
+                series2.getData().add(new XYChart.Data<String, Number>(roof.getArea(), roof.getWapenovervallen()));
+            });
+
+            barChart2.getData().add(series2);
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+}
+
+
 
     public void btn3(ActionEvent event){
 
@@ -73,11 +100,18 @@ public class Controller implements Initializable {
 
 
     public void btn5(ActionEvent event) {
+        String SQL =
+                "SELECT count(Voorval_nummer)\n" +
+                "FROM Crimes\n" +
+                "WHERE Gemiddelde_dagdeel_6_uren = '00:00-05:59'\n";
+//        double xyz = Double.parseDouble(SQL);
+        System.out.println(SQL);
         ObservableList<PieChart.Data> pieChartData =
                 FXCollections.observableArrayList(
                         new PieChart.Data("Ochtend", 40),
                         new PieChart.Data("Middag", 30),
-                        new PieChart.Data("Avond", 115));
+                        new PieChart.Data("Avond", 115),
+                        new PieChart.Data("Nacht", 65));
 
         pieChart.setData(pieChartData);
 
