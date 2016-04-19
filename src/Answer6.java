@@ -1,11 +1,11 @@
 /**
  * Created by Gebruiker on 18-4-2016.
  */
-public class Antwoord6 {
+public class Answer6 {
     private String day_time;
     private int count_overvallen;
 
-    public Antwoord6(String day_time, int count_overvallen) {
+    public Answer6(String day_time, int count_overvallen) {
         this.day_time = day_time;
         this.count_overvallen = count_overvallen;
     }

@@ -14,7 +14,7 @@ public class Question2 {
     public void queries() throws SQLException {
     }
 
-    public List<Antwoord2> getGevaarlijkstewijk() throws SQLException {
+    public List<Answer2> getGevaarlijkstewijk() throws SQLException {
         DBConnect con = new DBConnect();
         System.out.println(con);
 
@@ -27,10 +27,10 @@ public class Question2 {
                 "HAVING count(s.weapon) > 14" ;
         System.out.println(gevaarlijstewijk);
         rs = con.executeQuery(gevaarlijstewijk);
-        List<Antwoord2> GevaarlijkstewijkenTotaals = new ArrayList<>();
+        List<Answer2> GevaarlijkstewijkenTotaals = new ArrayList<>();
         while (!rs.isLast()) {
             rs.next();
-            Antwoord2 gevaarlijkstewijkenTotaal = new Antwoord2( rs.getString("ns.area"), rs.getInt("count(s.weapon)"));
+            Answer2 gevaarlijkstewijkenTotaal = new Answer2( rs.getString("ns.area"), rs.getInt("count(s.weapon)"));
             System.out.println(gevaarlijkstewijkenTotaal);
 
             GevaarlijkstewijkenTotaals.add(gevaarlijkstewijkenTotaal);

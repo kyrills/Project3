@@ -1,11 +1,11 @@
 /**
  * Created by Samuel on 18-04-16.
  */
-public class Antwoord3 {
+public class Answer3 {
     private String voorval_nr;
     private int overvalbuit;
 
-    public Antwoord3(String voorval_nr, int overvalbuit) {
+    public Answer3(String voorval_nr, int overvalbuit) {
         this.voorval_nr = voorval_nr;
         this.overvalbuit = overvalbuit;
     }

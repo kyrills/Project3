@@ -1,11 +1,11 @@
 /**
  * Created by Gebruiker on 18-4-2016.
  */
-public class Antwoord2 {
+public class Answer2 {
     private String area;
     private int wapenovervallen;
 
-    public Antwoord2(String area, int wapenovervallen) {
+    public Answer2(String area, int wapenovervallen) {
         this.area = area;
         this.wapenovervallen = wapenovervallen;
     }
