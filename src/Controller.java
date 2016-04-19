@@ -62,8 +62,8 @@ public class Controller implements Initializable {
                 series1.getData().add(new XYChart.Data<String, Number>(roof.getArea(), roof.getAantal()));
             });
 
-            barChart.getData().add(series);
-            barChart.getData().add(series1);
+            barChart.getData().addAll(series, series1);
+//            barChart.getData().add(series1);
 
         } catch (SQLException e) {
             e.printStackTrace();
