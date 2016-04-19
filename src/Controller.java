@@ -109,10 +109,10 @@ public class Controller implements Initializable {
 
 
     public void btn5(ActionEvent event) {
-        String SQL =
-                "SELECT count(Voorval_nummer)\n" +
-                "FROM Crimes\n" +
-                "WHERE Gemiddelde_dagdeel_6_uren = '00:00-05:59'\n";
+        String SQL = "SELECT day_time, count(voorval_nr) AS dagdeel_overvallen2\n" +
+                        "FROM Crimes_straatroof\n" +
+                        "WHERE right(date, length(date)-6) = \"2011\"\n" +
+                        "GROUP BY day_time;";
 //        double xyz = Double.parseDouble(SQL);
         System.out.println(SQL);
         ObservableList<PieChart.Data> pieChartData =
