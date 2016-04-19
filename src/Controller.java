@@ -42,7 +42,7 @@ public class Controller implements Initializable {
     public LineChart<String, Number> lineChart;
 
     @FXML
-    public PieChart pieChart;
+    public BarChart<String, Number> barChart5;
 
     @FXML
     public PieChart pieChart2;
@@ -126,18 +126,21 @@ public class Controller implements Initializable {
 
 
     public void btn5(ActionEvent event) {
-//        XYChart.Series<String, Number> series6 = new XYChart.Series<>();
-//
-//        Question6 q6 = new Question6();
-//        try {
-//            q6.getGevaarlijkstedagdeel().forEach(roof ->{
-//                series6.getData().add(new XYChart.Data<String, Number>(roof.getDay_time(), roof.getCount_overvallen()));
-//            });
-//            pieChart2.getData().add(series6);
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
+
+        XYChart.Series<String, Number> series5 = new XYChart.Series<>();
+
+        Question5 q5 = new Question5();
+        try {
+            q5.getFiestMerk().forEach(roof -> {
+                series5.getData().add(new XYChart.Data<String, Number>(roof.getVoorval_nr(), roof.getOvervalbuit()));
+            });
+
+            barChart5.getData().add(series5);
+
+            System.out.println(series5);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 
