@@ -1,0 +1,22 @@
+SELECT day_time, count(Voorval_nr)
+FROM Crimes_fietsroof
+WHERE day_time = "00:00-05:59" AND
+      right(date, length(date)-6) = "2011";
+
+
+SELECT day_time, count(Voorval_nr)
+FROM Crimes_fietsroof
+WHERE day_time = "06:00-11:59" AND
+      right(date, length(date)-6) = "2011";
+
+
+SELECT day_time, count(Voorval_nr)
+FROM Crimes_fietsroof
+WHERE day_time = "12:00-17:59" AND
+      right(date, length(date)-6) = "2011";
+
+
+SELECT day_time, count(Voorval_nr)
+FROM Crimes_fietsroof
+WHERE day_time = "18:00-23:59" AND
+      right(date, length(date)-6) = "2011";
