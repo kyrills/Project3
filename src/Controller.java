@@ -58,9 +58,9 @@ public class Controller implements Initializable {
             q1.getFietsroven().forEach(roof ->{
                 series.getData().add(new XYChart.Data<String, Number>(roof.getArea(), roof.getAantal()));
             });
-            q1.getStraatroven().forEach(roof ->{
-                series1.getData().add(new XYChart.Data<String, Number>(roof.getArea(), roof.getAantal()));
-            });
+//            q1.getStraatroven().forEach(roof ->{
+//                series1.getData().add(new XYChart.Data<String, Number>(roof.getArea(), roof.getAantal()));
+//            });
 
             barChart.getData().addAll(series, series1);
 //            barChart.getData().add(series1);
@@ -76,7 +76,7 @@ public class Controller implements Initializable {
         Question2 q2 = new Question2();
         try {
             q2.getGevaarlijkstewijk().forEach(roof -> {
-                series2.getData().add(new XYChart.Data<String, Number>(roof.getArea().substring(2), roof.getWapenovervallen()));
+                series2.getData().add(new XYChart.Data<String, Number>(roof.getArea(), roof.getWapenovervallen()));
             });
 
             barChart2.getData().add(series2);
@@ -99,6 +99,7 @@ public class Controller implements Initializable {
 
             barChart3.getData().add(series3);
 
+            System.out.println(series3);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -125,24 +126,6 @@ public class Controller implements Initializable {
 
 
     public void btn5(ActionEvent event) {
-        String SQL = "SELECT day_time, count(voorval_nr) AS dagdeel_overvallen2\n" +
-                        "FROM Crimes_straatroof\n" +
-                        "WHERE right(date, length(date)-6) = \"2011\"\n" +
-                        "GROUP BY day_time;";
-//        double xyz = Double.parseDouble(SQL);
-        System.out.println(SQL);
-        ObservableList<PieChart.Data> pieChartData =
-                FXCollections.observableArrayList(
-                        new PieChart.Data("Ochtend", 40),
-                        new PieChart.Data("Middag", 30),
-                        new PieChart.Data("Avond", 115),
-                        new PieChart.Data("Nacht", 65));
-
-        pieChart.setData(pieChartData);
-
-    }
-
-   public void btn6(ActionEvent event) {
 //        XYChart.Series<String, Number> series6 = new XYChart.Series<>();
 //
 //        Question6 q6 = new Question6();
@@ -156,6 +139,36 @@ public class Controller implements Initializable {
 //            e.printStackTrace();
 //        }
     }
+
+
+
+
+
+
+   public void btn6(ActionEvent event) {
+            //        pieChart.setCategoryGap(0);
+            PieChart pieseries = new PieChart();
+            ObservableList<PieChart.Data> pieData = FXCollections.observableArrayList();
+            Question6 q6 = new Question6();
+
+            try {
+                q6.getDagDeel().forEach(roof ->{
+                    pieData.add(new PieChart.Data(roof.getDay_time(),roof.getCount_overvallen()));
+                });
+//            q1.getStraatroven().forEach(roof ->{
+//                series1.getData().add(new XYChart.Data<String, Number>(roof.getArea(), roof.getAantal()));
+//            });
+
+                pieChart2.setData(pieData);
+
+//            barChart.getData().add(series1);
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
