@@ -18,8 +18,7 @@ public class Main extends Application{
     }
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-//        Controller controller1 = new Controller();
-//        controller1.btn(ActionEvent event);
+
         launch(args);
     }
 

@@ -53,13 +53,14 @@ public class Controller implements Initializable {
         Question1 q1 = new Question1();
         try {
             q1.getFietsroven().forEach(roof ->{
-                series.getData().add(new XYChart.Data<String, Number>(roof.getArea().substring(2), roof.getAantal()));
+                series.getData().add(new XYChart.Data<String, Number>(roof.getArea(), roof.getAantal()));
             });
             q1.getStraatroven().forEach(roof ->{
-                series1.getData().add(new XYChart.Data<String, Number>(roof.getArea().substring(2), roof.getAantal()));
+                series1.getData().add(new XYChart.Data<String, Number>(roof.getArea(), roof.getAantal()));
             });
 
-            barChart.getData().addAll(series, series1);
+            barChart.getData().add(series);
+            barChart.getData().add(series1);
 
         } catch (SQLException e) {
             e.printStackTrace();
