@@ -36,6 +36,9 @@ public class Controller implements Initializable {
     public BarChart<String, Number> barChart2;
 
     @FXML
+    public BarChart<String, Number> barChart3;
+
+    @FXML
     public LineChart<String, Number> lineChart;
 
     @FXML
@@ -86,7 +89,19 @@ public class Controller implements Initializable {
 
 
     public void btn3(ActionEvent event){
+        XYChart.Series<String, Number> series3 = new XYChart.Series<>();
 
+        Question3 q3 = new Question3();
+        try {
+            q3.getMeestebuit().forEach(roof -> {
+                series3.getData().add(new XYChart.Data<String, Number>(roof.getVoorval_nr(), roof.getOvervalbuit()));
+            });
+
+            barChart3.getData().add(series3);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 

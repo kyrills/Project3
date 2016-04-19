@@ -67,7 +67,8 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <BarChart layoutX="39.0" layoutY="-8.0" prefHeight="550.0" prefWidth="900.0" title="Meest gestolen objecten in Rotterdam">
+                        <Button layoutX="395.0" layoutY="520.0" mnemonicParsing="false" onAction="#btn3" text="Button" />
+                        <BarChart fx:id="barChart3" layoutX="157.0" layoutY="61.0">
                            <xAxis>
                               <CategoryAxis side="BOTTOM" />
                            </xAxis>
@@ -78,7 +79,6 @@
                               <Insets top="30.0" />
                            </padding>
                         </BarChart>
-                        <Button layoutX="460.0" layoutY="529.0" mnemonicParsing="false" onAction="#btn3" text="Button" />
                      </children>
                   </AnchorPane>
                </content>
