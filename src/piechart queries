@@ -20,3 +20,19 @@ SELECT day_time, count(Voorval_nr)
 FROM Crimes_fietsroof
 WHERE day_time = "18:00-23:59" AND
       right(date, length(date)-6) = "2011";
+      
+      
+      # SAMUELLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL VOOR JOU
+      SELECT day_time, SUM(`ochtend - delicten totaal`)
+      FROM (SELECT day_time, count(voorval_nr) AS "ochtend - delicten totaal"
+            FROM Crimes_straatroof
+            WHERE
+              right(date, length(date)-6) = "2011"
+
+        UNION ALL
+            SELECT day_time,  count(voorval_nr) AS dagdeel_overvallen
+            FROM Crimes_fietsroof
+            WHERE right(date, length(date)-6) = "2011"
+
+
+      ) s;
