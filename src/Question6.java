@@ -49,7 +49,8 @@ public class Question6 {
     private ResultSet rs;
     public int Amount = 0;
     public String fietsroof;
-    public String straatroof;
+    public String dagdeelQuery;
+
     DBConnect con = new DBConnect();
 
     public void queries() throws SQLException {
@@ -73,8 +74,9 @@ public class Question6 {
 //    }
     public List<Answer6> getDagDeel() throws SQLException {
         System.out.println(con);
-        straatroof = "SELECT day_time, count(Voorval_nr) FROM Crimes_fietsroof WHERE day_time = '00:00-05:59' AND right(date, length(date)-6) = '2011'";
-        rs = con.executeQuery(straatroof);
+        dagdeelQuery = "SELECT day_time, count(Voorval_nr) FROM Crimes_fietsroof GROUP BY day_time";
+        rs = con.executeQuery(dagdeelQuery);
+
 
         List<Answer6> dagdeelTotaal = new ArrayList<>();
         while (!rs.isLast()) {
