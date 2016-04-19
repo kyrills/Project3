@@ -126,34 +126,6 @@ public class Controller implements Initializable {
 
 
     public void btn5(ActionEvent event) {
-//        pieChart.setCategoryGap(0);
-        PieChart pieseries = new PieChart();
-        ObservableList<PieChart.Data> pieData = FXCollections.observableArrayList();
-        Question6 q6 = new Question6();
-
-        try {
-            q6.getDagDeel().forEach(roof ->{
-                pieData.add(new PieChart.Data(roof.getDay_time(),roof.getCount_overvallen()));
-            });
-//            q1.getStraatroven().forEach(roof ->{
-//                series1.getData().add(new XYChart.Data<String, Number>(roof.getArea(), roof.getAantal()));
-//            });
-
-            pieChart.setData(pieData);
-
-//            barChart.getData().add(series1);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
-
-
-
-
-
-
-   public void btn6(ActionEvent event) {
 //        XYChart.Series<String, Number> series6 = new XYChart.Series<>();
 //
 //        Question6 q6 = new Question6();
@@ -167,6 +139,36 @@ public class Controller implements Initializable {
 //            e.printStackTrace();
 //        }
     }
+
+
+
+
+
+
+   public void btn6(ActionEvent event) {
+            //        pieChart.setCategoryGap(0);
+            PieChart pieseries = new PieChart();
+            ObservableList<PieChart.Data> pieData = FXCollections.observableArrayList();
+            Question6 q6 = new Question6();
+
+            try {
+                q6.getDagDeel().forEach(roof ->{
+                    pieData.add(new PieChart.Data(roof.getDay_time(),roof.getCount_overvallen()));
+                });
+//            q1.getStraatroven().forEach(roof ->{
+//                series1.getData().add(new XYChart.Data<String, Number>(roof.getArea(), roof.getAantal()));
+//            });
+
+                pieChart2.setData(pieData);
+
+//            barChart.getData().add(series1);
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
