@@ -71,15 +71,15 @@ public class Question6 {
 
 //        return fietsroofTotaals;
 //    }
-    public List<Antwoord6> getDagDeel() throws SQLException {
+    public List<Answer6> getDagDeel() throws SQLException {
         System.out.println(con);
         straatroof = "SELECT day_time, count(Voorval_nr) FROM Crimes_fietsroof WHERE day_time = '00:00-05:59' AND right(date, length(date)-6) = '2011'";
         rs = con.executeQuery(straatroof);
 
-        List<Antwoord6> dagdeelTotaal = new ArrayList<>();
+        List<Answer6> dagdeelTotaal = new ArrayList<>();
         while (!rs.isLast()) {
             rs.next();
-            Antwoord6 test = new Antwoord6(rs.getString("day_time"), rs.getInt("count(Voorval_nr)"));
+            Answer6 test = new Answer6(rs.getString("day_time"), rs.getInt("count(Voorval_nr)"));
 
             dagdeelTotaal.add(test);
             Amount += 1;
