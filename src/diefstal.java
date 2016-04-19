@@ -1,7 +1,7 @@
 /**
  * Created by Kyrilll van Seventer on 18/04/2016.
  */
-public class diefstal implements Roof {
+public class diefstal{
     private String area;
     private int aantal;
 
