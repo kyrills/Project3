@@ -22,8 +22,13 @@ public class Question6 {
 
         gevaarlijkstedagdeel = "SELECT day_time, count(voorval_nr) AS dagdeel_overvallen\n" +
                 "FROM Crimes_fietsroof\n" +
-                "WHERE day_time\n" +
-                "GROUP BY day_time";
+                "WHERE \n" +
+                "      day_time = \"00:00-05:59\" AND\n" +
+                "      day_time = \"06:00-11:59\" AND\n" +
+                "      day_time = \"12:00-17:59\" AND\n" +
+                "      day_time = \"18:00-23:59\" AND\n" +
+                "      right(date, length(date)-6) = \"2011\"\n" +
+                "GROUP BY day_time;";
         System.out.println(gevaarlijkstedagdeel);
         rs = con.executeQuery(gevaarlijkstedagdeel);
         List<Antwoord6> GevaarlijkstedagdeelTotaals = new ArrayList<>();

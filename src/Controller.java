@@ -41,6 +41,9 @@ public class Controller implements Initializable {
     @FXML
     public PieChart pieChart;
 
+    @FXML
+    public PieChart pieChart2;
+
 
     public void btn(ActionEvent event) {
         XYChart.Series<String, Number> series = new XYChart.Series<>();
@@ -123,19 +126,19 @@ public class Controller implements Initializable {
 
     }
 
-    public void btn6(ActionEvent event) {
-        XYChart.Series<String, Number> series6 = new XYChart.Series<>();
-
-        Question6 q6 = new Question6();
-        try {
-            q6.getGevaarlijkstedagdeel().forEach(roof ->{
-                series6.getData().add(new XYChart.Data<String, Number>(roof.getDay_time(), roof.getCount_overvallen()));
-            });
-            barChart.getData().add(series6);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+   public void btn6(ActionEvent event) {
+//        XYChart.Series<String, Number> series6 = new XYChart.Series<>();
+//
+//        Question6 q6 = new Question6();
+//        try {
+//            q6.getGevaarlijkstedagdeel().forEach(roof ->{
+//                series6.getData().add(new XYChart.Data<String, Number>(roof.getDay_time(), roof.getCount_overvallen()));
+//            });
+//            pieChart2.getData().add(series6);
+//
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
     }
 
     @Override
