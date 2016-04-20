@@ -9,9 +9,6 @@ public class Question1 {
     public String namen;
     DBConnect con = new DBConnect();
 
-    public void queries() throws SQLException {
-    }
-
     public ResultSet getFietsroven_1() throws SQLException {
 
         fietsroof =  "SELECT DISTINCT area, COUNT(area) AS Aantal FROM Neighbourhood_fietsroof WHERE location = \"ROTTERDAM\" GROUP BY area HAVING count(area) > 340";

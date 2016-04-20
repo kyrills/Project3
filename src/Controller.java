@@ -68,7 +68,7 @@ public class Controller{
     @FXML    private void loadbar1() throws SQLException {
         if(!bar1loaded) {
 
-            barChart.setTitle("Criminaliteit");
+            barChart.setTitle("Criminaliteit per wijk.");
 
             xAxis_top.setLabel("Gemeenten");
             yAxis_top.setLabel("aantal");
@@ -132,7 +132,7 @@ public class Controller{
     @FXML    private void loadbar2() throws SQLException {
         if(!bar2loaded) {
 
-            barChart2.setTitle("Criminaliteit");
+            barChart2.setTitle("Wijken met de meeste wapens.");
 
             xAxis_top.setLabel("Gevaarlijkste wijken");
             yAxis_top.setLabel("Aantal");
@@ -146,7 +146,7 @@ public class Controller{
                 gevaarlijkste.getData().add(new XYChart.Data(result.getString("ns.area"), result.getInt("count(s.weapon)")));
             }
 
-            gevaarlijkste.setName("Wijken met de meeste wapens.");
+            gevaarlijkste.setName("Wapens");
             barChart2.setAnimated(false);
             barChart2.getData().add(gevaarlijkste);
 
@@ -264,7 +264,7 @@ public class Controller{
     //while (cnt < 3){
     if(!bar5loaded) {
 
-        barChart5.setTitle("Buit");
+        barChart5.setTitle("Meest gestolen merk.");
 
 //            gemeenten.clear();
 //            gemeenten.addAll(Arrays.asList(gemeentenlist));
@@ -281,7 +281,7 @@ public class Controller{
             buit.getData().add(new XYChart.Data(result.getString("brand_type"), result.getInt("Aantal")));
         }
 
-        buit.setName("Buit");
+        buit.setName("Merken");
         barChart5.setAnimated(false);
         barChart5.getData().add(buit);
 
@@ -294,6 +294,7 @@ public class Controller{
             PieChart pieseries = new PieChart();
             ObservableList<PieChart.Data> pieData = FXCollections.observableArrayList();
             Question6 q6 = new Question6();
+            pieChart2.setTitle("Criminaliteit per dagdeel.");
 
             try {
                 q6.getDagDeel().forEach(roof ->{

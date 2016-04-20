@@ -12,10 +12,6 @@ public class Question2 {
     public String gevaarlijkstewijk;
     DBConnect con = new DBConnect();
 
-
-    public void queries() throws SQLException {
-    }
-
     public ResultSet getGevaarlijk() throws SQLException {
 
         gevaarlijkstewijk = "SELECT ns.area, count(s.weapon)\n" +
