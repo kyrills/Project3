@@ -14,16 +14,8 @@ public class Answer2 {
         return area;
     }
 
-    public void setArea(String area) {
-        this.area = area;
-    }
-
     public int getWapenovervallen() {
         return wapenovervallen;
-    }
-
-    public void setWapenovervallen(int wapenovervallen) {
-        this.wapenovervallen = wapenovervallen;
     }
 
     @Override

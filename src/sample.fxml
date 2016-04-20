@@ -24,9 +24,9 @@
    </rowConstraints>
    <children>
       <Accordion GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <TabPane prefHeight="600.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="tabIndex" prefHeight="600.0" prefWidth="1000.0" tabClosingPolicy="UNAVAILABLE">
          <tabs>
-            <Tab closable="false" text="Question 1">
+            <Tab closable="false" onSelectionChanged="#loadbar1" text="Question 1">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
@@ -38,7 +38,6 @@
                             <NumberAxis side="LEFT" />
                           </yAxis>
                         </BarChart>
-                        <Button layoutX="474.0" layoutY="524.0" mnemonicParsing="false" onAction="#btn" text="Button" />
                      </children>
                   </AnchorPane>
                </content>
@@ -47,7 +46,6 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <Button layoutX="397.0" layoutY="477.0" mnemonicParsing="false" onAction="#btn2" text="Button" />
                         <BarChart fx:id="barChart2" layoutX="157.0" layoutY="61.0">
                            <xAxis>
                               <CategoryAxis side="BOTTOM" />
@@ -67,7 +65,6 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <Button layoutX="395.0" layoutY="520.0" mnemonicParsing="false" onAction="#btn3" text="Button" />
                         <BarChart fx:id="barChart3" layoutX="157.0" layoutY="61.0">
                            <xAxis>
                               <CategoryAxis side="BOTTOM" />
@@ -87,7 +84,6 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <Button layoutX="432.0" layoutY="484.0" mnemonicParsing="false" onAction="#btn4" text="Button" />
                         <LineChart fx:id="lineChart" layoutX="211.0" layoutY="51.0">
                           <xAxis>
                             <CategoryAxis side="BOTTOM" />
@@ -100,21 +96,17 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab closable="false" text="Question 5">
+            <Tab closable="false" onSelectionChanged="#loadbar2" text="Question 5">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <Button layoutX="395.0" layoutY="520.0" mnemonicParsing="false" onAction="#btn5" text="Button" />
-                        <BarChart fx:id="barChart5" layoutX="157.0" layoutY="61.0">
+                        <BarChart fx:id="barChart5" prefHeight="427.0" prefWidth="980.0">
                            <xAxis>
                               <CategoryAxis side="BOTTOM" />
                            </xAxis>
                            <yAxis>
                               <NumberAxis side="LEFT" />
                            </yAxis>
-                           <padding>
-                              <Insets top="30.0" />
-                           </padding>
                         </BarChart>
                      </children>
                   </AnchorPane>
@@ -125,7 +117,6 @@
                   <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
                         <PieChart fx:id="pieChart2" layoutX="186.0" layoutY="68.0" />
-                        <Button layoutX="390.0" layoutY="468.0" mnemonicParsing="false" onAction="#btn6" text="Button" />
                      </children></AnchorPane>
                </content>
             </Tab>

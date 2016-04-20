@@ -14,16 +14,8 @@ public class Answer3 {
         return voorval_nr;
     }
 
-    public void setVoorval_nr(String voorval_nr) {
-        this.voorval_nr = voorval_nr;
-    }
-
     public int getOvervalbuit() {
         return overvalbuit;
-    }
-
-    public void setOvervalbuit(int overvalbuit) {
-        this.overvalbuit = overvalbuit;
     }
 
     @Override

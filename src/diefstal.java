@@ -14,17 +14,13 @@ public class diefstal{
         return area;
     }
 
-    public void setArea(String area) {
-        this.area = area;
-    }
+    public void setArea(String area) {this.area = area;}
 
     public int getAantal() {
         return aantal;
     }
 
-    public void setAantal(int aantal) {
-        this.aantal = aantal;
-    }
+    public void setAantal(int aantal) {this.aantal = aantal;}
 
     @Override
     public String toString() {
