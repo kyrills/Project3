@@ -11,31 +11,19 @@ import java.util.List;
 public class Question4 {
     private ResultSet rs;
     public int Amount = 0;
-    public String delictenpermaand;
-
+    public String delicten;
+    DBConnect con = new DBConnect();
     public void queries() throws SQLException {
     }
 
-    public List<Answer4> getOvervallen() throws SQLException {
-        DBConnect con = new DBConnect();
-        System.out.println(con);
+    public ResultSet getDelicten() throws SQLException {
 
-        delictenpermaand = "SELECT mid(date, 4, 2) AS maand, count(voorval_nr)\n" +
+        delicten = "SELECT mid(date, 4, 2) AS maand, count(voorval_nr)\n" +
                 "FROM Crimes_fietsroof\n" +
                 "WHERE right(date, length(date)-6) = \"2011\"\n" +
                 "GROUP BY maand";
-        System.out.println(delictenpermaand);
-        rs = con.executeQuery(delictenpermaand);
-        List<Answer4> DelictenpermaandTotaals = new ArrayList<>();
-        while (!rs.isLast()) {
-            rs.next();
-            Answer4 delictenpermaandTotaal = new Answer4( rs.getString("maand"), rs.getInt("count(voorval_nr)"));
-            System.out.println(delictenpermaandTotaal);
+        rs = con.executeQuery(delicten);
+        return rs;
 
-           DelictenpermaandTotaals.add(delictenpermaandTotaal);
-            Amount += 1;
-        }
-
-        return DelictenpermaandTotaals;
     }
 }

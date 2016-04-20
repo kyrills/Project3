@@ -31,6 +31,7 @@ public class Answer6 {
         return "GevaarlijksteDagdeelTotaal{" +
                 "dagdeel='" + day_time + '\'' +
                 ", aantal=" + count_overvallen +
+
                 '}';
     }
 }
