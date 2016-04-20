@@ -23,7 +23,7 @@ public class Question5 {
         DBConnect con = new DBConnect();
         System.out.println(con);
 
-        fietsmerk = "SELECT fr.brand_type, count(fr.object) FROM Fietsroof fr WHERE object = 'FIETS' GROUP BY fr.brand_type HAVING count(fr.object) > 150";
+        fietsmerk = "SELECT fr.brand_type, count(fr.object) FROM Fietsroof fr WHERE object = 'FIETS' AND brand_type <> 'ONBEKEND' GROUP BY fr.brand_type HAVING count(fr.object) > 150";
         System.out.println(fietsmerk);
         rs = con.executeQuery(fietsmerk);
         List<Answer5> BuitTotaals = new ArrayList<>();
