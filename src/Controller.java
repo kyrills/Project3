@@ -107,21 +107,19 @@ public class Controller implements Initializable {
 
 
     public void btn4(ActionEvent event) {
-        XYChart.Series<String, Number> series3 = new XYChart.Series<String, Number>();
-        series3.getData().add(new XYChart.Data<String, Number>("Jan", 200));
-        series3.getData().add(new XYChart.Data<String, Number>("Feb", 600));
-        series3.getData().add(new XYChart.Data<String, Number>("Mar", 400));
-        series3.getData().add(new XYChart.Data<String, Number>("Apr", 400));
-        series3.getData().add(new XYChart.Data<String, Number>("May", 400));
-        series3.getData().add(new XYChart.Data<String, Number>("Jun", 400));
-        series3.getData().add(new XYChart.Data<String, Number>("Jul", 400));
-        series3.getData().add(new XYChart.Data<String, Number>("Aug", 400));
-        series3.getData().add(new XYChart.Data<String, Number>("Sep", 400));
-        series3.getData().add(new XYChart.Data<String, Number>("Okt", 400));
-        series3.getData().add(new XYChart.Data<String, Number>("Nov", 400));
-        series3.getData().add(new XYChart.Data<String, Number>("Dec", 400));
+        XYChart.Series<String, Number> series4 = new XYChart.Series<>();
 
-        lineChart.getData().add(series3);
+        Question4 q4 = new Question4();
+        try {
+            q4.getOvervallen().forEach(roof -> {
+                series4.getData().add(new XYChart.Data<String, Number>(roof.getMaand(), roof.getOvervallen()));
+            });
+
+            lineChart.getData().add(series4);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 
