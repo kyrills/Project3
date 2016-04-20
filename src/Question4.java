@@ -13,12 +13,10 @@ public class Question4 {
     public int Amount = 0;
     public String delicten;
     DBConnect con = new DBConnect();
-    public void queries() throws SQLException {
-    }
 
     public ResultSet getDelicten() throws SQLException {
 
-        delicten = "SELECT mid(date, 4, 2) AS maand, count(voorval_nr)\n" +
+        delicten = "SELECT mid(date, 4, 2) AS maand, count(voorval_nr) AS aantal\n" +
                 "FROM Crimes_fietsroof\n" +
                 "WHERE right(date, length(date)-6) = \"2011\"\n" +
                 "GROUP BY maand";

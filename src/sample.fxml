@@ -30,7 +30,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <BarChart fx:id="barChart" layoutX="10.0" layoutY="14.0" prefHeight="427.0" prefWidth="980.0">
+                        <BarChart fx:id="barChart" prefHeight="571.0" prefWidth="990.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <xAxis>
                             <CategoryAxis side="BOTTOM" />
                           </xAxis>
@@ -42,11 +42,11 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab closable="false" text="Question 2">
+            <Tab closable="false" onSelectionChanged="#loadbar2" text="Question 2">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <BarChart fx:id="barChart2" layoutX="157.0" layoutY="61.0">
+                        <BarChart fx:id="barChart2" layoutX="1.0" prefHeight="571.0" prefWidth="990.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <xAxis>
                               <CategoryAxis side="BOTTOM" />
                            </xAxis>
@@ -61,11 +61,11 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab closable="false" text="Question 3">
+            <Tab closable="false" onSelectionChanged="#loadbar3" text="Question 3">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <BarChart fx:id="barChart3" layoutX="157.0" layoutY="61.0">
+                        <BarChart fx:id="barChart3" layoutX="1.0" layoutY="-1.0" prefHeight="571.0" prefWidth="990.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <xAxis>
                               <CategoryAxis side="BOTTOM" />
                            </xAxis>
@@ -80,11 +80,11 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab closable="false" text="Question 4">
+            <Tab closable="false" onSelectionChanged="#loadline4" text="Question 4">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <LineChart fx:id="lineChart" layoutX="211.0" layoutY="51.0">
+                        <LineChart fx:id="lineChart" prefHeight="571.0" prefWidth="990.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <xAxis>
                             <CategoryAxis side="BOTTOM" />
                           </xAxis>
@@ -96,11 +96,11 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab closable="false" onSelectionChanged="#loadbar2" text="Question 5">
+            <Tab closable="false" onSelectionChanged="#loadbar5" text="Question 5">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <BarChart fx:id="barChart5" prefHeight="427.0" prefWidth="980.0">
+                        <BarChart fx:id="barChart5" prefHeight="571.0" prefWidth="990.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <xAxis>
                               <CategoryAxis side="BOTTOM" />
                            </xAxis>
@@ -112,11 +112,11 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab closable="false" text="Question 6">
+            <Tab closable="false" onSelectionChanged="#piebar6" text="Question 6">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <PieChart fx:id="pieChart2" layoutX="186.0" layoutY="68.0" />
+                        <PieChart fx:id="pieChart2" layoutX="1.0" layoutY="1.0" prefHeight="571.0" prefWidth="990.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children></AnchorPane>
                </content>
             </Tab>
