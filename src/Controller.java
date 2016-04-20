@@ -49,27 +49,28 @@ public class Controller{
     private CategoryAxis xAxis_top = new CategoryAxis();
     private NumberAxis yAxis_top = new NumberAxis();
 
+    //First barchart is created.
     @FXML    private void loadbar1() throws SQLException {
-        if(!bar1loaded) {
+        if(!bar1loaded) {//This functions as a sort of guard so that the data can only be loaded once.
 
-            barChart.setTitle("Criminaliteit per wijk.");
+            barChart.setTitle("Criminaliteit per wijk."); //BarCharts title can be set here.
 
-            xAxis_top.setLabel("Gemeenten");
-            yAxis_top.setLabel("aantal");
-            xAxis_top.setTickLabelRotation(-90.0);
+            xAxis_top.setLabel("Gemeenten"); //The xAxis label can be set here.
+            yAxis_top.setLabel("aantal"); //The yAxis label can be set here.
+            xAxis_top.setTickLabelRotation(-90.0); //This will rotate the xAxis label so that it is horizontal.
 
-            Question1 q1 = new Question1();
-            ResultSet result = q1.getFietsroven_1();
+            Question1 q1 = new Question1(); //A new instance of Question1 is created called q1
+            ResultSet result = q1.getFietsroven_1(); //q1 gets the results from resultset getFietsroven_1
 
             result.absolute(0);
-            while (result.next()) {
-                criminaliteit.getData().add(new XYChart.Data(result.getString("area"), result.getInt("Aantal")));
+            while (result.next()) { //iterates to the resultset until the last one is reached and returned.
+                criminaliteit.getData().add(new XYChart.Data(result.getString("area"), result.getInt("Aantal"))); //adds the values to the chart
             }
 
-            criminaliteit.setName("Criminaliteit");
-            barChart.getData().add(criminaliteit);
+            criminaliteit.setName("Fietsdiefstallen en straatroven per wijk"); //The name for the legend is set.
+            barChart.getData().add(criminaliteit); //The data gets actually added
 
-            bar1loaded = true;
+            bar1loaded = true;//Since we're done now the value of bar1loaded can be set to true.
         }
     }
 
@@ -90,7 +91,7 @@ public class Controller{
                 gevaarlijkste.getData().add(new XYChart.Data(result.getString("ns.area"), result.getInt("count(s.weapon)")));
             }
 
-            gevaarlijkste.setName("Wapens");
+            gevaarlijkste.setName("Meeste wapens");
             barChart2.setAnimated(false);
             barChart2.getData().add(gevaarlijkste);
 
@@ -150,7 +151,7 @@ public class Controller{
 @FXML    private void loadbar5() throws SQLException, InterruptedException {
     if(!bar5loaded) {
 
-        barChart5.setTitle("Meest gestolen merk.");
+        barChart5.setTitle("Meest gestolen fietsmerk.");
 
         xAxis_top.setLabel("Merken");
         yAxis_top.setLabel("Aantal");

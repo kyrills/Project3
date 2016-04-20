@@ -11,6 +11,7 @@ public class Question6 {
 
     DBConnect con = new DBConnect();
 
+    //creates a list (answer 6) which eventually gets filled with the data from the database, this data will then be returned and implemented in the controller.
     public List<Answer6> getDagDeel() throws SQLException {
         dagdeelQuery = "SELECT day_time, count(Voorval_nr) FROM Crimes_fietsroof GROUP BY day_time";
         rs = con.executeQuery(dagdeelQuery);
