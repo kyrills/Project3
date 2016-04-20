@@ -53,7 +53,7 @@ public class Controller{
     @FXML    private void loadbar1() throws SQLException {
         if(!bar1loaded) {//This functions as a sort of guard so that the data can only be loaded once.
 
-            barChart.setTitle("Criminaliteit per wijk."); //BarCharts title can be set here.
+            barChart.setTitle("Criminaliteit per wijk"); //BarCharts title can be set here.
 
             xAxis_top.setLabel("Gemeenten"); //The xAxis label can be set here.
             yAxis_top.setLabel("aantal"); //The yAxis label can be set here.
@@ -77,7 +77,7 @@ public class Controller{
     @FXML    private void loadbar2() throws SQLException {
         if(!bar2loaded) {
 
-            barChart2.setTitle("Wijken met de meeste wapens.");
+            barChart2.setTitle("Wijken met de meeste wapens");
 
             xAxis_top.setLabel("Gevaarlijkste wijken");
             yAxis_top.setLabel("Aantal");
@@ -116,7 +116,7 @@ public class Controller{
                 object.getData().add(new XYChart.Data(result.getString("object"), result.getInt("count(voorval_nr)")));
             }
 
-            object.setName("Meest gestolen object.");
+            object.setName("Meest gestolen object");
             barChart3.setAnimated(false);
             barChart3.getData().add(object);
 
@@ -151,7 +151,7 @@ public class Controller{
 @FXML    private void loadbar5() throws SQLException, InterruptedException {
     if(!bar5loaded) {
 
-        barChart5.setTitle("Meest gestolen fietsmerk.");
+        barChart5.setTitle("Meest gestolen fietsmerk");
 
         xAxis_top.setLabel("Merken");
         yAxis_top.setLabel("Aantal");
@@ -175,7 +175,7 @@ public class Controller{
             PieChart pieseries = new PieChart();
             ObservableList<PieChart.Data> pieData = FXCollections.observableArrayList();
             Question6 q6 = new Question6();
-            pieChart2.setTitle("Criminaliteit per dagdeel.");
+            pieChart2.setTitle("Criminaliteit per dagdeel");
 
             try {
                 q6.getDagDeel().forEach(roof ->{
