@@ -36,3 +36,18 @@ WHERE day_time = "18:00-23:59" AND
 
 
       ) s;
+      
+      
+      
+      SELECT object, count(object1)
+FROM (
+SELECT fr.object, count(fr.object) AS object1
+FROM Fietsroof fr
+GROUP BY object
+
+  UNION
+
+SELECT sr.object, count(sr.object) AS object2
+FROM Straatroof sr
+GROUP BY object) u
+GROUP BY object
