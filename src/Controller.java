@@ -112,7 +112,7 @@ public class Controller{
 
             result.absolute(0);
             while (result.next()) {
-                object.getData().add(new XYChart.Data(result.getString("fr.object"), result.getInt("robject")));
+                object.getData().add(new XYChart.Data(result.getString("object"), result.getInt("count(voorval_nr)")));
             }
 
             object.setName("Meest gestolen object.");

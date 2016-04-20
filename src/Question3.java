@@ -10,7 +10,38 @@ public class Question3 {
 
     public ResultSet getBuit() throws SQLException {
 
-        buit = "SELECT fr.object, count(fr.object), count(sr.object) AS robject FROM Fietsroof fr, Straatroof sr WHERE fr.object = sr.object GROUP BY fr.object HAVING count(fr.object)";
+        buit = "SELECT object, count(voorval_nr)\n" +
+                "FROM Fietsroof\n" +
+                "GROUP BY object\n" +
+                "HAVING object = \"fiets\"\n" +
+                "\n" +
+                "UNION\n" +
+                "\n" +
+                "SELECT object, count(voorval_nr)\n" +
+                "FROM Fietsroof\n" +
+                "GROUP BY object\n" +
+                "HAVING object = \"bromfiets\"\n" +
+                "\n" +
+                "UNION\n" +
+                "\n" +
+                "SELECT object, count(voorval_nr)\n" +
+                "FROM Fietsroof\n" +
+                "GROUP BY object\n" +
+                "HAVING object = \"snorfiets\"\n" +
+                "\n" +
+                "UNION\n" +
+                "\n" +
+                "SELECT object, count(voorval_nr)\n" +
+                "FROM Straatroof\n" +
+                "  WHERE object = \"GSM\"\n" +
+                "GROUP BY object\n" +
+                "\n" +
+                "UNION\n" +
+                "\n" +
+                "SELECT object, count(voorval_nr)\n" +
+                "FROM Straatroof\n" +
+                "WHERE object = \"tas\"\n" +
+                "GROUP BY object";
 
         rs = con.executeQuery(buit);
 
