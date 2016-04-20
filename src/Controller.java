@@ -157,22 +157,7 @@ public class Controller{
 
 
 
-//    public void btn3(ActionEvent event){
-//        XYChart.Series<String, Number> series3 = new XYChart.Series<>();
-//
-//        Question3 q3 = new Question3();
-//        try {
-//            q3.getMeestebuit().forEach(roof -> {
-//                series3.getData().add(new XYChart.Data<String, Number>(roof.getVoorval_nr(), roof.getOvervalbuit()));
-//            });
-//
-//            barChart3.getData().add(series3);
-//
-//            System.out.println(series3);
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
+
 
     @FXML    private void loadbar3() throws SQLException {
         if(!bar3loaded) {
