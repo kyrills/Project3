@@ -1,14 +1,8 @@
 import DBConnect.DBConnect;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 
-/**
- * Created by Gebruiker on 18-4-2016.
- */
 public class Question2 {
     private ResultSet rs;
-    public int Amount = 0;
     public String gevaarlijkstewijk;
     DBConnect con = new DBConnect();
 
@@ -25,5 +19,4 @@ public class Question2 {
 
         return rs;
     }
-
 }

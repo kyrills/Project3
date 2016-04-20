@@ -1,24 +1,12 @@
 import DBConnect.DBConnect;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-
-/**
- * Created by Samuel on 18-04-16.
- */
-//" "
 
 
 public class Question3 {
     private ResultSet rs;
-    public int Amount = 0;
     public String buit;
     DBConnect con = new DBConnect();
-
-    public void queries() throws SQLException {
-    }
 
     public ResultSet getBuit() throws SQLException {
 

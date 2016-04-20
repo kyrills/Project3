@@ -1,16 +1,9 @@
 import DBConnect.DBConnect;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
-/**
- * Created by Gebruiker on 19-4-2016.
- */
 public class Question4 {
     private ResultSet rs;
-    public int Amount = 0;
     public String delicten;
     DBConnect con = new DBConnect();
 

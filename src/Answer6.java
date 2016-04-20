@@ -1,6 +1,4 @@
-/**
- * Created by Gebruiker on 18-4-2016.
- */
+
 public class Answer6 {
     private String day_time;
     private int count_overvallen;
@@ -14,16 +12,8 @@ public class Answer6 {
         return day_time;
     }
 
-    public void setDay_time(String day_time) {
-        this.day_time = day_time;
-    }
-
     public int getCount_overvallen() {
         return count_overvallen;
-    }
-
-    public void setCount_overvallen(int count_overvallen) {
-        this.count_overvallen = count_overvallen;
     }
 
     @Override

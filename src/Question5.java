@@ -4,7 +4,6 @@ import java.sql.SQLException;
 
 public class Question5 {
     private ResultSet rs;
-    public int Amount = 0;
     public String fietsmerk;
     DBConnect con = new DBConnect();
 
